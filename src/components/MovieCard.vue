@@ -76,6 +76,7 @@ const handleLeave = () => {
     style="width: calc(100% / 6 - 4px); min-width: 140px"
     @mouseenter="handleEnter"
     @mouseleave="handleLeave"
+    @click="router.push('/movie/' + movie.id)"
   >
     <!-- Base card — portrait poster, no title overlay -->
     <div class="relative w-full">
