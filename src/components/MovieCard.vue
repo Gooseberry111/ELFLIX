@@ -21,6 +21,9 @@ const cardRef = ref(null);
 const popupStyle = ref({});
 let hoverTimer = null;
 
+// Detect touch device
+const isTouchDevice = "ontouchstart" in window || navigator.maxTouchPoints > 0;
+
 const matchScore = computed(() => {
   if (!props.movie?.vote_average) return "N/A";
   return Math.round(props.movie.vote_average * 10);
@@ -33,6 +36,9 @@ const releaseYear = computed(() => {
 });
 
 const handleEnter = () => {
+  // Skip hover popup on touch devices
+  if (isTouchDevice) return;
+
   hoverTimer = setTimeout(() => {
     const rect = cardRef.value.getBoundingClientRect();
     const popupWidth = rect.width * 1.8;
