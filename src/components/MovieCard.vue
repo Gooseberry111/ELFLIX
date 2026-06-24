@@ -22,7 +22,7 @@ const popupStyle = ref({});
 let hoverTimer = null;
 
 // Detect touch device
-const isTouchDevice = "ontouchstart" in window || navigator.maxTouchPoints > 0;
+const isTouchDevice = window.matchMedia("(hover: none)").matches;
 
 const matchScore = computed(() => {
   if (!props.movie?.vote_average) return "N/A";
