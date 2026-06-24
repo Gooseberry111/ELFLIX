@@ -12,7 +12,7 @@ const profiles = [
 
 const selectProfile = (profile) => {
   localStorage.setItem("elflix-profile", JSON.stringify(profile));
-  router.push("/");
+  router.push("/home");
 };
 </script>
 

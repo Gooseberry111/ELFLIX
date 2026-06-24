@@ -56,7 +56,7 @@ const navigate = (path) => {
       <!-- Logo -->
       <div
         class="text-red-600 text-3xl font-bold tracking-wide cursor-pointer"
-        @click="navigate('/')"
+        @click="navigate('/home')"
       >
         ELFLIX
       </div>
@@ -64,7 +64,7 @@ const navigate = (path) => {
       <!-- Desktop Links -->
       <div class="hidden md:flex items-center gap-6 text-sm">
         <a
-          @click="navigate('/')"
+          @click="navigate('/home')"
           class="hover:text-gray-300 transition cursor-pointer"
           >Home</a
         >

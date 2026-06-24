@@ -1,13 +1,22 @@
 import { createRouter, createWebHistory } from "vue-router";
 import HomeView from "../views/HomeView.vue";
 import MovieDetail from "../views/MovieDetail.vue";
-import SearchView from "../views/MovieDetail.vue";
+import SearchView from "../views/SearchView.vue";
 import MyListView from "../views/MyListView.vue";
 import ProfileView from "../views/ProfileView.vue";
+
 const routes = [
   {
     path: "/",
+    redirect: "/profiles",
+  },
+  {
+    path: "/home",
     component: HomeView,
+  },
+  {
+    path: "/profiles",
+    component: ProfileView,
   },
   {
     path: "/movie/:id",
@@ -20,10 +29,6 @@ const routes = [
   {
     path: "/mylist",
     component: MyListView,
-  },
-  {
-    path: "/profiles",
-    component: ProfileView,
   },
 ];
 
